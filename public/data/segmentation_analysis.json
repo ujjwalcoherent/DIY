@@ -1,62 +1,50 @@
 {
   "Global": {
-    "By Type": {
-      "Sub-Normothermic Perfusion (20–34°C)": {},
-      "Warm or Normothermic Perfusion (35–37°C)": {}
+    "By Product Type": {
+      "Indoor Fixed Security Cameras": {},
+      "Outdoor Fixed Security Cameras": {},
+      "Video Doorbell Cameras": {},
+      "Floodlight and Spotlight Security Cameras": {},
+      "Pan-Tilt-Zoom Security Cameras": {}
     },
-    "By Organ Type": {
-      "Liver": {},
-      "Heart": {},
-      "Lung": {},
-      "Kidney": {},
-      "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": {}
+    "By Solution Model": {
+      "Self-Managed Security Camera Solutions (DIY)": {},
+      "Professionally Managed Security Camera Solutions": {}
     },
-    "Application / Use Case": {
-      "Organ Preservation": {},
-      "Viability Assessment": {},
-      "Physiologic Transport": {},
-      "Reconditioning Marginal Organs": {},
-      "Others (Research Use / Protocol development)": {}
+    "By End Use": {
+      "Residential Users": {
+        "Single-Family Homes": {},
+        "Multi-Family Homes, Apartments and Condominiums": {}
+      },
+      "Small and Light Commercial Users": {
+        "Small Offices": {},
+        "Retail Stores": {},
+        "Restaurants, Cafes and Foodservice Outlets": {},
+        "Warehouses and Storage Facilities": {}
+      }
     },
-    "By End User": {
-      "Hospitals & Clinics": {},
-      "Specialty Clinic/Centers": {},
-      "Transplant Centers": {},
-      "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": {}
+    "By Power Type": {
+      "Hardwired Cameras": {},
+      "Battery-Powered Cameras": {},
+      "Solar-Assisted Cameras": {},
+      "Power over Ethernet (PoE) Cameras": {}
+    },
+    "By Video Resolution": {
+      "HD and Full HD": {},
+      "2K": {},
+      "4K and Above": {}
+    },
+    "By Distribution Channel": {
+      "Brand-Owned Direct Online Sales": {},
+      "Third-Party E-Commerce Marketplaces": {},
+      "Consumer Electronics Retail": {},
+      "Home Improvement Retail": {},
+      "Security Dealers, Installers and Integrators": {}
     },
     "By Region": {
       "North America": {
         "U.S.": {},
         "Canada": {}
-      },
-      "Europe": {
-        "U.K.": {},
-        "Germany": {},
-        "Italy": {},
-        "France": {},
-        "Spain": {},
-        "Russia": {},
-        "Rest of Europe": {}
-      },
-      "Asia Pacific": {
-        "China": {},
-        "India": {},
-        "Japan": {},
-        "South Korea": {},
-        "ASEAN": {},
-        "Australia": {},
-        "Rest of Asia Pacific": {}
-      },
-      "Latin America": {
-        "Brazil": {},
-        "Argentina": {},
-        "Mexico": {},
-        "Rest of Latin America": {}
-      },
-      "Middle East & Africa": {
-        "GCC": {},
-        "South Africa": {},
-        "Rest of Middle East & Africa": {}
       }
     }
   }
