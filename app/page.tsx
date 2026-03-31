@@ -15,6 +15,7 @@ import { CompetitiveIntelligence } from '@/components/charts/CompetitiveIntellig
 import CustomerIntelligenceHeatmap from '@/components/charts/CustomerIntelligenceHeatmap'
 import DistributorsIntelligence from '@/components/charts/DistributorsIntelligenceTable'
 import CustomerIntelligenceDatabase from '@/components/charts/CustomerIntelligenceDatabase'
+import CustomerIntelligencePropositions from '@/components/charts/CustomerIntelligencePropositions'
 import { InsightsPanel } from '@/components/InsightsPanel'
 import { FilterPresets } from '@/components/filters/FilterPresets'
 import { ChartGroupSelector } from '@/components/filters/ChartGroupSelector'
@@ -31,7 +32,7 @@ export default function DashboardPage() {
   const { setData, setLoading, setError, data, isLoading, error, filters, selectedChartGroup, dashboardName } = useDashboardStore()
   const [mounted, setMounted] = useState(false)
   const [hasCheckedStore, setHasCheckedStore] = useState(false)
-  const [activeTab, setActiveTab] = useState<'bar' | 'line' | 'heatmap' | 'table' | 'waterfall' | 'bubble' | 'competitive-intelligence' | 'customer-intelligence' | 'customer-intelligence-database'>('bar')
+  const [activeTab, setActiveTab] = useState<'bar' | 'line' | 'heatmap' | 'table' | 'waterfall' | 'bubble' | 'competitive-intelligence' | 'customer-intelligence' | 'customer-intelligence-database' | 'customer-intelligence-propositions'>('bar')
   const [showInsights, setShowInsights] = useState(false)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [viewMode, setViewMode] = useState<'tabs' | 'vertical'>('tabs')
@@ -55,7 +56,8 @@ export default function DashboardPage() {
     'bubble': 'bubble',
     'competitive-intelligence': 'competitive-intelligence',
     'customer-intelligence': 'customer-intelligence',
-    'customer-intelligence-database': 'customer-intelligence-database'
+    'customer-intelligence-database': 'customer-intelligence-database',
+    'customer-intelligence-propositions': 'customer-intelligence-propositions'
   }
 
   // Auto-switch to first available tab when chart group changes
@@ -188,8 +190,8 @@ export default function DashboardPage() {
           {/* Logo on the left */}
           <div className="flex-shrink-0">
             <Image 
-              src="/logo.png" 
-              alt="Coherent Market Insights Logo" 
+              src="/WMR.png" 
+              alt="WMR Market Insights Logo" 
               width={150} 
               height={60}
               className="h-auto w-auto max-w-[150px]"
@@ -201,10 +203,10 @@ export default function DashboardPage() {
           <div className="flex-1 flex justify-center">
             <div className="text-center">
               <h1 className="text-2xl font-bold text-black mb-1">
-                Coherent Dashboard
+                WMR Dashboard
               </h1>
               <h2 className="text-sm text-black">
-                {dashboardName || 'Global Normothermic Machine Perfusion Market'}
+                {dashboardName || ' North America DIY and Commercial Security Solutions Market'}
               </h2>
             </div>
           </div>
@@ -214,6 +216,9 @@ export default function DashboardPage() {
         {/* Global KPI Cards */}
         <div className="mb-6">
           <GlobalKPICards />
+          <p className="text-xs text-gray-500 italic mt-2 px-1">
+            NOTE: All the data in the dashboard is demo data. No real-world data is related to this.
+          </p>
         </div>
 
 
@@ -398,6 +403,18 @@ export default function DashboardPage() {
                             👤 Customer Intelligence
                           </button>
                         )}
+                        {isChartVisible('customer-intelligence-propositions') && (
+                          <button
+                            onClick={() => setActiveTab('customer-intelligence-propositions')}
+                            className={`px-6 py-3 text-sm font-medium border-b-2 transition-colors ${
+                              activeTab === 'customer-intelligence-propositions'
+                                ? 'border-blue-500 text-blue-600'
+                                : 'border-transparent text-black hover:text-black hover:border-gray-300'
+                            }`}
+                          >
+                            📋 Customer Database
+                          </button>
+                        )}
                       </>
                     )}
                   </nav>
@@ -474,7 +491,7 @@ export default function DashboardPage() {
                     {activeTab === 'bubble' && (
                       <div id="bubble-chart">
                         <D3BubbleChartIndependent 
-                          title="Coherent Opportunity Matrix" 
+                          title="WMR Opportunity Matrix" 
                           height={500}
                         />
                       </div>
@@ -510,6 +527,15 @@ export default function DashboardPage() {
                         <CustomerIntelligenceDatabase
                           title="Customer Intelligence Database"
                           height={600}
+                        />
+                      </div>
+                    )}
+
+                    {activeTab === 'customer-intelligence-propositions' && (
+                      <div id="customer-intelligence-propositions-chart">
+                        <CustomerIntelligencePropositions
+                          title="Customer Intelligence Database"
+                          height={700}
                         />
                       </div>
                     )}
@@ -570,7 +596,7 @@ export default function DashboardPage() {
                       <div className="border-b pb-8">
                         <h3 className="text-lg font-semibold text-black mb-4">🫧 Bubble Chart</h3>
                         <D3BubbleChartIndependent 
-                          title="Coherent Opportunity Matrix" 
+                          title="WMR Opportunity Matrix" 
                           height={450}
                         />
                       </div>
@@ -609,6 +635,15 @@ export default function DashboardPage() {
                         <CustomerIntelligenceDatabase
                           title="Customer Intelligence Database"
                           height={600}
+                        />
+                      </div>
+                    )}
+                    {isChartVisible('customer-intelligence-propositions') && (
+                      <div className="border-b pb-8">
+                        <h3 className="text-lg font-semibold text-black mb-4">📋 Customer Database</h3>
+                        <CustomerIntelligencePropositions
+                          title="Customer Intelligence Database"
+                          height={700}
                         />
                       </div>
                     )}
